@@ -19,7 +19,7 @@ func TripleStepRecursive(n int) int {
 
 // TripleStepMemo memoization
 func TripleStepMemo(n int) int {
-	m := make(map[int]int)
+	m := make([]int, n+3)
 	m[1] = 1
 	m[2] = 2
 	m[3] = 4
