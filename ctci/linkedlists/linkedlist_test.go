@@ -1,21 +1,9 @@
 package linkedlists
 
 import (
-	"fmt"
 	"strconv"
 	"testing"
 )
-
-func TestPushPop(t *testing.T) {
-	l := New()
-	t.Run("PushPop", func(t *testing.T) {
-		l.PushValue(1)
-		l.PushValue(2)
-		fmt.Println(l.Pop().Value)
-		fmt.Println(l.Pop().Value)
-		fmt.Println(l.Pop())
-	})
-}
 
 func TestCompare(t *testing.T) {
 	l1 := New()
