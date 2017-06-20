@@ -1,4 +1,4 @@
-package parenthesis
+package datastructures
 
 // Stack is a stack, man
 type Stack struct {
@@ -30,8 +30,10 @@ func new() *Stack {
 	return &Stack{make([]int, 0), -1}
 }
 
-// Parenthesis returns true if the input paranthesization is valid
-func Parenthesis(input string) bool {
+// Parenthesis returns (false, n) if the input parenthesization is unbalanced,
+// with n the position of the first offending parenthesis. (true, -1) if the
+// input paranthesization is balanced.
+func Parenthesis(input string) (bool, int) {
 	stack := new()
 	for i := 0; i < len(input); i++ {
 		if input[i] == '(' {
@@ -39,12 +41,16 @@ func Parenthesis(input string) bool {
 		} else {
 			found, _ := stack.pop()
 			if !found {
-				return false
+				return false, i
 			}
 		}
 	}
 
-	found, _ := stack.pop()
+	found, offending := stack.pop()
 
-	return !found
+	if !found {
+		return true, -1
+	}
+
+	return false, offending
 }
