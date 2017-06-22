@@ -1,5 +1,7 @@
 package datastructures
 
+import "strconv"
+
 //BTNode is a binary tree node
 type BTNode struct {
 	Key   int
@@ -65,4 +67,26 @@ func Find(t *BTNode, key int) *BTNode {
 	}
 
 	return nil
+}
+
+//Repr gives a string representation of the tree
+func (t *BTNode) Repr() string {
+	s := ""
+
+	var repr func(*BTNode, int, string)
+
+	repr = func(n *BTNode, level int, label string) {
+		if n != nil {
+			for i := 0; i < level; i++ {
+				s += "  "
+			}
+			s += label + strconv.Itoa(n.Key) + "\n"
+			repr(n.Left, level+1, "L")
+			repr(n.Right, level+1, "R")
+		}
+	}
+
+	repr(t, 0, "R")
+
+	return s
 }

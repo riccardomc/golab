@@ -2,14 +2,13 @@ package datastructures
 
 import (
 	"math/rand"
-	"strconv"
 	"testing"
 	"time"
 )
 
 func TestBinarySearchTree(t *testing.T) {
 
-	t.Run("Insert/Find", func(t *testing.T) {
+	t.Run("Insert/Search", func(t *testing.T) {
 		tree := NewBTNode()
 
 		rand.Seed(time.Now().UTC().UnixNano())
@@ -18,11 +17,26 @@ func TestBinarySearchTree(t *testing.T) {
 			data[i] = rand.Int() % 100
 			tree.Insert(data[i])
 		}
-		actual := " "
-		BTNodeBFSApply(tree.Left, func(n *BTNode) {
-			actual = actual + " " + strconv.Itoa(n.Key)
-		})
-		t.Log(actual)
+
+		for i := 0; i < 10; i++ {
+			found := tree.BinarySearch(data[i])
+			if found == nil {
+				t.Error("Node not found but should be there")
+				return
+			}
+
+			if found.Key != data[i] {
+				t.Errorf("%d != %d", found.Key, data[i])
+			}
+		}
+
+		for i := 100; i < 110; i++ {
+			found := tree.BinarySearch(i)
+			if found != nil {
+				t.Error("Node found but should not be there")
+			}
+
+		}
 
 	})
 }
