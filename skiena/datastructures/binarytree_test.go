@@ -9,39 +9,19 @@ func TestFind(t *testing.T) {
 
 	tree := &BTNode{
 		1,
-		&BTNode{
-			2,
-			&BTNode{
-				4,
-				nil,
-				nil,
-			},
-			&BTNode{
-				5,
-				&BTNode{
-					100,
-					&BTNode{
-						101,
-						nil,
-						nil,
-					},
+		&BTNode{2,
+			&BTNode{4, nil, nil},
+			&BTNode{5,
+				&BTNode{100,
+					&BTNode{101, nil, nil},
 					nil,
 				},
 				nil,
 			},
 		},
-		&BTNode{
-			3,
-			&BTNode{
-				6,
-				nil,
-				nil,
-			},
-			&BTNode{
-				7,
-				nil,
-				nil,
-			},
+		&BTNode{3,
+			&BTNode{6, nil, nil},
+			&BTNode{7, nil, nil},
 		},
 	}
 
@@ -114,31 +94,13 @@ func TestTraversal(t *testing.T) {
 
 	tree := &BTNode{
 		1,
-		&BTNode{
-			2,
-			&BTNode{
-				4,
-				nil,
-				nil,
-			},
-			&BTNode{
-				5,
-				nil,
-				nil,
-			},
+		&BTNode{2,
+			&BTNode{4, nil, nil},
+			&BTNode{5, nil, nil},
 		},
-		&BTNode{
-			3,
-			&BTNode{
-				6,
-				nil,
-				nil,
-			},
-			&BTNode{
-				7,
-				nil,
-				nil,
-			},
+		&BTNode{3,
+			&BTNode{6, nil, nil},
+			&BTNode{7, nil, nil},
 		},
 	}
 
