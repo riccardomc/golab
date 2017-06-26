@@ -1,4 +1,4 @@
-package datastructures
+package binarytree
 
 //BTNodeQueue is a queue for BTNode
 type BTNodeQueue struct {

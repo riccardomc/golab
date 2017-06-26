@@ -1,6 +1,8 @@
-package datastructures
+package binarytree
 
-import "math"
+import (
+	"math"
+)
 
 //BinarySearch a key in the tree
 func (t *BTNode) BinarySearch(k int) *BTNode {

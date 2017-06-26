@@ -4,13 +4,15 @@ import (
 	"math/rand"
 	"sort"
 	"testing"
+
+	"github.com/riccardomc/golab/skiena/datastructures/binarytree"
 )
 
 func TestTreeToList(t *testing.T) {
 	t.Run("Simple tree", func(t *testing.T) {
 		expected := "[ 0 1 2 3 4 5 6 7 8 9 ]"
 
-		tree := NewBTNode()
+		tree := binarytree.NewBTNode()
 		for i := 0; i < 10; i++ {
 			tree.Insert(i)
 		}
@@ -25,7 +27,7 @@ func TestTreeToList(t *testing.T) {
 	t.Run("Random tree", func(t *testing.T) {
 
 		size := 100
-		tree := NewBTNode()
+		tree := binarytree.NewBTNode()
 		data := make([]int, size)
 		for i := 0; i < size; i++ {
 			data[i] = rand.Int() % 1000

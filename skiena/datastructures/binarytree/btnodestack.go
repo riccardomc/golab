@@ -1,4 +1,4 @@
-package datastructures
+package binarytree
 
 //BTNodeStack is a stack for BTNode
 type BTNodeStack struct {

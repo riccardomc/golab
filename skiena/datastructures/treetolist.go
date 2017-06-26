@@ -1,13 +1,15 @@
 package datastructures
 
+import "github.com/riccardomc/golab/skiena/datastructures/binarytree"
+
 //TreeToList returns a list representation of the tree
-func TreeToList(t *BTNode) *Node {
+func TreeToList(t *binarytree.BTNode) *Node {
 
 	l := &Node{-1, nil}
 
-	var toList func(*BTNode)
+	var toList func(*binarytree.BTNode)
 
-	toList = func(t *BTNode) {
+	toList = func(t *binarytree.BTNode) {
 		if t == nil {
 			return
 		}

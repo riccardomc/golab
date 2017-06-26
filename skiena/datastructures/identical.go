@@ -1,7 +1,9 @@
 package datastructures
 
+import "github.com/riccardomc/golab/skiena/datastructures/binarytree"
+
 // Identical returns true if the t1, t2 are identical binary trees
-func Identical(t1, t2 *BTNode) bool {
+func Identical(t1, t2 *binarytree.BTNode) bool {
 	if t1 == nil && t2 == nil {
 		return true
 	}
